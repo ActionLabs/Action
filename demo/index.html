@@ -27,23 +27,29 @@
               background-color:#cccccc;
             }
 
-            div,img{
+            div {
                 float: left;
                 position: relative;
                 display: block;
-                margin: 5px;
+                margin: 1px;
+            }
+            .giant {
+                display: block;
+                height: 300px;
+                width: 300px;
+                border: 2em solid green;
             }
             .helloFamous {
                 display: block;
                 /*position: absolute;*/
-                height: 250px;
+                height: 150px;
                 width: 150px;
                 /*background-color: #FA5C4F;*/
                 /*top: 350px;*/
                 /*left: 0px;*/
                 padding: 46px;
-                /*border: 2px solid black;*/
-                border: 3ex solid black;
+                border: 2px solid black;
+                /*border: 3ex solid black;*/
             }
 
         </style>
@@ -56,6 +62,9 @@
                 <button>Click Me</button>
             </form>
             <!-- <p>This is text in a box. Let's see if it shows up on the canvas.</p> -->
+        </div>
+        <div class='giant'>
+            Whut!
         </div>
         <script type="text/javascript" src="../bower_components/html2canvas/build/html2canvas.js"></script>
         <script type="text/javascript" src="../src/action.js"></script>
