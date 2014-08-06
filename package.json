@@ -1,0 +1,24 @@
+{
+  "name": "Action",
+  "version": "0.0.0",
+  "description": "Wrapper for famous to enable simple yet awesome animations / transitions on DOM elements.",
+  "main": "action.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ActionLabs/Action.git"
+  },
+  "keywords": [
+    "famo.us",
+    "animation",
+    "canvas"
+  ],
+  "author": "Tom O'Connell & Bob Owen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ActionLabs/Action/issues"
+  },
+  "homepage": "https://github.com/ActionLabs/Action"
+}

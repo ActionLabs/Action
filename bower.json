@@ -1,0 +1,22 @@
+{
+  "name": "Action",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ActionLabs/Action",
+  "authors": [
+    "Tom O'Connell & Bob Owen"
+  ],
+  "description": "Wrapper for famous to enable simple yet awesome animations / transitions on DOM elements.",
+  "main": "action.js",
+  "license": "None",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html2canvas": "~0.4.1"
+  }
+}
