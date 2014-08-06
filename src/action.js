@@ -5,7 +5,6 @@
 
     // Get size information from the domNode
     var size = getElementSize(domNode);
-    console.log('Width: ', domNode.clientWidth, ' Height: ', domNode.clientHeight);
 
     // Create an element to hold the canvas that famous will show
     var actionElement = document.createElement('div');
