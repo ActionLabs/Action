@@ -2,6 +2,12 @@
   function actionMaker(domNode, options){
     
     //FIXME: Quick and dirty run through
+
+    // Create an element to hold the canvas that famous will show
+    var actionElement = document.createElement('div');
+    actionElement.id = 'famousHook';
+    document.body.appendChild(actionElement);
+
     // Create an rendered version on the node for later use.
     html2canvas(domNode, {
       background: undefined,
@@ -14,7 +20,6 @@
         }
       }
     });
-
   }
 
   // publish library for use
