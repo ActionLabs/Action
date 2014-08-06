@@ -1,6 +1,7 @@
 (function (){
   var actionElement;
   var originalNode;
+  var originalNextSibling;
 
   function actionMaker(domNode, options){
     originalNode = domNode;
@@ -37,7 +38,6 @@
           image.onload = function() {
             var canvasContext = famousContext.getCanvasContext();
             canvasContext.drawImage(image, 0, 0);
-            // document.body.appendChild(image);
           }
         }
       });
@@ -46,14 +46,25 @@
 
   // publish library for use
   window.action = actionMaker;
+
   window.addActionElement = function(){
     var nodeParent = originalNode.parentNode;
-    var nextSibling = originalNode.nextSibling
+    originalNextSibling = originalNode.nextSibling
     nodeParent.removeChild(originalNode);
-    if (nextSibling) {
-      nodeParent.insertBefore(actionElement, nextSibling);
+    if (originalNextSibling) {
+      nodeParent.insertBefore(actionElement, originalNextSibling);
     } else {
       nodeParent.appendChild(actionElement);
+    }
+  }
+
+  window.removeActionElement = function(){
+    var nodeParent = actionElement.parentNode;
+    nodeParent.removeChild(actionElement);
+    if (originalNextSibling) {
+      nodeParent.insertBefore(originalNode, originalNextSibling);
+    } else {
+      nodeParent.appendChild(originalNode);
     }
   }
 })();
