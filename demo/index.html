@@ -45,8 +45,6 @@
                 border: 2px solid black;
             }
 
-            #famousHook {
-            }
         </style>
     </head>
     <body>
@@ -62,5 +60,8 @@
         </div>
         <script type="text/javascript" src="../bower_components/html2canvas/build/html2canvas.js"></script>
         <script type="text/javascript" src="../src/action.js"></script>
+        <script>
+            window.action(document.getElementsByClassName('helloFamous')[0]);
+        </script>
     </body>
 </html>
