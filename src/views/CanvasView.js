@@ -12,7 +12,6 @@ define(function(require, exports, module) {
 
   // Constructor function for our CanvasView class
   function CanvasView() {
-
       // Applies View's constructor function to CanvasView class
       View.apply(this, arguments);
 
@@ -35,11 +34,11 @@ define(function(require, exports, module) {
 
   // Define your helper functions and prototype methods here
   function _createCanvas() {
-    this.canvasSurface = new CanvasSurface({size: [500, 500]});
+    this.canvasSurface = new CanvasSurface({size: this.options.size});
     var ctx = this.canvasSurface.getContext('2d');
 
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
-    ctx.fillRect(0, 0, 500, 500);
+    ctx.fillStyle = 'rgba(88, 0, 0, 0.5)';
+    ctx.fillRect(0, 0, this.options.size[0], this.options.size[1]);
 
     this.add(this.canvasSurface);
   }

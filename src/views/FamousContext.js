@@ -4,12 +4,14 @@ define(function(require, exports, module) {
 
   var canvasView;
 
-  function FamousContext(baseElement){
+  function FamousContext(baseElement, size){
     var mainContext = Engine.createContext(baseElement);
 
     mainContext.setPerspective(1000);
 
-    canvasView = new CanvasView();
+    canvasView = new CanvasView({
+      size: [size[0], size[1]]
+    });
 
     mainContext.add(canvasView);    
   }
