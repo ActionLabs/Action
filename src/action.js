@@ -12,20 +12,25 @@
     require.config({
       baseUrl: '../src/'
     });
-    require(['views/FamousContext']);
+    require(['views/FamousContext'], function(FamousContext){
+      var famousContext = new FamousContext();
 
-    // Create an rendered version on the node for later use.
-    html2canvas(domNode, {
-      background: undefined,
-      onrendered: function(canvas) {
-        var image = new Image();
-        image.id = 'pic';
-        image.src = canvas.toDataURL();
-        image.onload = function() {
-          document.body.appendChild(image);
+      // Create an rendered version on the node for later use.
+      html2canvas(domNode, {
+        background: undefined,
+        onrendered: function(canvas) {
+          var image = new Image();
+          image.id = 'pic';
+          image.src = canvas.toDataURL();
+          image.onload = function() {
+            var canvasContext = famousContext.getCanvasContext();
+            canvasContext.drawImage(image, 0, 0);
+          }
         }
-      }
+      });
+      
     });
+
   }
 
   // publish library for use

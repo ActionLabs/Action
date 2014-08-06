@@ -38,7 +38,7 @@ define(function(require, exports, module) {
     this.canvasSurface = new CanvasSurface({size: [500, 500]});
     var ctx = this.canvasSurface.getContext('2d');
 
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.9)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
     ctx.fillRect(0, 0, 500, 500);
 
     this.add(this.canvasSurface);

@@ -2,12 +2,26 @@ define(function(require, exports, module) {
   var Engine  = require('famous/core/Engine');
   var CanvasView = require('views/CanvasView');
 
-  var mainContext = Engine.createContext(window.actionElement);
+  var canvasView;
 
-  mainContext.setPerspective(1000);
+  function FamousContext(){
+    var mainContext = Engine.createContext(window.actionElement);
 
-  var canvasView = new CanvasView();
+    mainContext.setPerspective(1000);
 
-  mainContext.add(canvasView);
+    canvasView = new CanvasView();
+
+    mainContext.add(canvasView);    
+  }
+
+  FamousContext.prototype = Object.create(Object.prototype);
+  FamousContext.prototype.constructor = FamousContext;
+
+  FamousContext.prototype.getCanvasContext = function() {
+    return canvasView.getContext();
+  }
+
+
   
+  module.exports = FamousContext;
 });
