@@ -4,8 +4,8 @@ define(function(require, exports, module) {
 
   var canvasView;
 
-  function FamousContext(){
-    var mainContext = Engine.createContext(window.actionElement);
+  function FamousContext(baseElement){
+    var mainContext = Engine.createContext(baseElement);
 
     mainContext.setPerspective(1000);
 
