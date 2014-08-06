@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Famo.us</title>
+        <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+        <!-- Famo.us shims for backwards compatibility -->
+        <script type="text/javascript" src="http://code.famo.us/lib/functionPrototypeBind.js"></script>
+        <script type="text/javascript" src="http://code.famo.us/lib/classList.js"></script>
+        <script type="text/javascript" src="http://code.famo.us/lib/requestAnimationFrame.js"></script>
+
+        <!-- Famo.us module loader -->
+        <script type="text/javascript" src="http://code.famo.us/lib/require.js"></script>
+
+        <!-- Famo.us -->
+        <link rel="stylesheet" type="text/css" href="http://code.famo.us/famous/0.2/famous.css" />
+        <script type="text/javascript" src="http://code.famo.us/famous/0.2.0-surfacefix/famous.min.js"></script>
+
+        <!-- Local styling -->
+        <style>
+            body {
+              background-image:url('images/IMG_4125.jpg');
+              background-size: 800px 500px;
+              background-color:#cccccc;
+            }
+
+            div,img{
+                float: left;
+                position: relative;
+                display: block;
+                margin: 5px;
+            }
+            .helloFamous {
+                display: block;
+                /*position: absolute;*/
+                height: 250px;
+                width: 150px;
+                /*background-color: #FA5C4F;*/
+                /*top: 350px;*/
+                /*left: 0px;*/
+                padding: 46px;
+                border: 2px solid black;
+            }
+
+            #famousHook {
+            }
+        </style>
+    </head>
+    <body>
+        <div class="helloFamous">
+            <h1>Hello Famous</h1>
+            <form>
+                <input type="text" value="This is some demo text for the field/">
+                <button>Click Me</button>
+            </form>
+            <!-- <p>This is text in a box. Let's see if it shows up on the canvas.</p> -->
+        </div>
+        <div id="famousHook">
+        </div>
+        <script type="text/javascript" src="../bower_components/html2canvas/build/html2canvas.js"></script>
+        <script type="text/javascript" src="../src/action.js"></script>
+    </body>
+</html>
