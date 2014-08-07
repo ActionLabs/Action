@@ -21,10 +21,7 @@
       // Create an element to hold the canvas that famous will show
       actionElement = document.createElement('div');
       actionElement.id = 'famousHook';
-      actionElement.style.width = size[0] + 'px';
-      actionElement.style.height = size[1] + 'px';
-      actionElement.style.display = 'block';
-
+      DomTools.setElementSize(actionElement, size);
 
       var famousContext = new FamousContext(actionElement, size);
 

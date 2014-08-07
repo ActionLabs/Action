@@ -1,9 +1,15 @@
 define(function(require, exports, module) {
   var DomTools = {};
 
+  DomTools.setElementSize = function(domNode, size){
+    domNode.style.width = size[0] + 'px';
+    domNode.style.height = size[1] + 'px';
+    domNode.style.display = 'block';
+  };
+
   DomTools.getElementSize = function(domNode) {
     return [domNode.clientWidth + getBorderWidth(domNode), domNode.clientHeight + getBorderHeight(domNode)];
-  }
+  };
 
   function getBorderWidth(domNode) {
     var leftBorderWidth = getComputedStyle(domNode, null).getPropertyValue('border-left-width');
