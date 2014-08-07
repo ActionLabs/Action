@@ -10,7 +10,7 @@ define(function(require, exports, module) {
     mainContext.setPerspective(1000);
 
     canvasView = new CanvasView({
-      size: [size[0], size[1]]
+      size: size
     });
 
     mainContext.add(canvasView);    

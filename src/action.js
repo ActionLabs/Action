@@ -1,5 +1,10 @@
 (function (){
+  var actionElement;
+  var originalNode;
+  var originalNextSibling;
+
   function actionMaker(domNode, options){
+    originalNode = domNode;
     
     //FIXME: Quick and dirty run through
 
@@ -9,14 +14,14 @@
     require(['views/FamousContext',
              'tools/DomTools'], 
              function(FamousContext, DomTools){
-              
+
       // Get size information from the domNode
       var size = DomTools.getElementSize(domNode);
 
       // Create an element to hold the canvas that famous will show
-      var actionElement = document.createElement('div');
+      actionElement = document.createElement('div');
       actionElement.id = 'famousHook';
-      document.body.appendChild(actionElement);
+      DomTools.setElementSize(actionElement, size);
 
       var famousContext = new FamousContext(actionElement, size);
 
@@ -38,4 +43,25 @@
 
   // publish library for use
   window.action = actionMaker;
+
+  window.addActionElement = function(){
+    var nodeParent = originalNode.parentNode;
+    originalNextSibling = originalNode.nextSibling
+    nodeParent.removeChild(originalNode);
+    if (originalNextSibling) {
+      nodeParent.insertBefore(actionElement, originalNextSibling);
+    } else {
+      nodeParent.appendChild(actionElement);
+    }
+  }
+
+  window.removeActionElement = function(){
+    var nodeParent = actionElement.parentNode;
+    nodeParent.removeChild(actionElement);
+    if (originalNextSibling) {
+      nodeParent.insertBefore(originalNode, originalNextSibling);
+    } else {
+      nodeParent.appendChild(originalNode);
+    }
+  }
 })();
